@@ -1,0 +1,229 @@
+<!-- Panel -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">Expense Edit</h3>
+  </div>
+  
+  <div class="panel-body">
+    <%= bootstrap_form_for(@expense) do |f| %>
+            <% if @expense.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+                <ul>
+                <% @expense.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+    <div class="row">
+     <div class="col-md-4"> 
+          <%= f.hidden_field :id %>
+          <div class="field">
+            <%= f.date_select :year, label: "Expense Year Start" %>
+          </div>
+          <div class="field">
+            <%= f.date_select :yearend, label: "Expense Year End" %>
+          </div>
+          <div class="field" id="selection">
+            <%= f.collection_select :buildinginfo, Building.all, :half_address, :half_address, {:label => "Civic Address Info"} %>
+          </div>  
+    
+    </div>
+  </div>
+
+    <div class="row"> 
+      <div class="col-lg-6"> 
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+          <tr>
+            <th>1</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item1, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost1, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>2</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item2, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost2, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>3</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item3, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost3, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>4</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item4, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost4, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>5</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item5, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost5, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          
+          </tbody>
+        </table>
+        
+          
+            
+         
+        </div>
+          <div class="col-lg-6"> 
+          <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+          <tr>
+            <th>6</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item6, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost6, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>7</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item7, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost7, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>8</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item8, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost8, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>9</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item9, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost9, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>10</th>
+            <th>
+              <div class="field">
+                <%= f.text_field :item10, hide_label: true %>
+              </div>
+            </th>
+            <th>
+              <div class="field">
+                <%= f.text_field :cost10, hide_label: true %>
+              </div>
+            </th>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+          
+        
+        
+    
+  </div>
+
+  <div class="col-lg-6"> 
+    
+            <div class="field">
+                    <%= f.text_field :yeartotal, value: number_with_precision(f.object.yeartotal, precision: 2), label: "Year Total", :readonly=>true %>
+                  </div>
+                    
+            <div class="actions">
+              <%= f.submit "Update Expense", :class => "btn btn-success" %>
+            </div>
+              <span id="delete">
+                    <%= link_to "Delete", @expense, method: :delete, :class=>"btn btn-danger navbar-btn pull-right bot-right", data: { confirm: "Deleting this expense, also deletes all the cost items in it for the expense year"} %>
+                    </span>
+            </div>
+
+            <% end %>
+
+  </div>
+  <div class="col-lg-6"> 
+  </div>
+  
+  <div class="panel-footer">
+
+        
+  </div>
+</div>

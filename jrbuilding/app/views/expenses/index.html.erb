@@ -1,0 +1,48 @@
+<head>
+  <title>Expenses List</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Expenses List </h3>
+      </div>
+
+      <div class="panel-body">        
+        <div class="row">
+          
+               
+
+          <div class="col-md-6 col-drop">
+               <div class="input-group">
+                      
+                      <%= form_tag expenses_path, :id => "expenses_filter_building", :method => 'get' do %>
+                        
+                        <%= collection_select @building, :search, Building.all, :half_address, :half_address, {:prompt => "Civic Address"}, {:class => "form-control", :id => "index_expense_building_select"} %>
+        
+                      <% end %>                      
+                </div>
+          </div> 
+          <div class="col-md-6 col-drop">
+               <div class="input-group">
+                      
+                      <%= form_tag expenses_path, :id => "expenses_filter_year", :method => 'get' do %>
+                        
+                        <%= collection_select @expense, :search, Expense.years_only, :year_only, :year_only, {:prompt => "Expense Year"}, {:class => "form-control", :id => "index_expense_year_select"}  %>
+                        
+                      <% end %>                   
+                </div>
+
+          </div>
+               
+             
+        </div>
+      </div>
+        
+      
+      <div id="filteredexpenses">
+          <%= render 'expenses' %>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>

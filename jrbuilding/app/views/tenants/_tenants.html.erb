@@ -1,0 +1,42 @@
+<div class="panel-body">        
+            <!-- Each thumbnail -->
+          
+            <div class="row">
+
+              <% if (@tenants.nil?) || (@tenants.count == 0) %>
+                <h2>No Tenants</h2>
+              <% else %>
+              
+              <% @tenants.each do |tenant| %>
+                 <div class="col-sm-6 col-md-4">
+                  <div class="panel panel-default">
+                    
+                    <div class="panel-body">
+                      <% string = tenant.tenantname %> 
+                      <% string2 = "CA: " + tenant.tenantbuildinginfo %> 
+                      <h3><%= string.downcase.first(20) %></h3>
+                      <h5><%= string2.first(32) %></h5><h5>Local: <%= tenant.propertynumber%></h5>
+                      
+                      <p>
+                        <a type="button" class="btn btn-primary navbar-btn" href=<%= edit_tenant_path(tenant) %>>Edit</a> 
+                        
+                      </p>   
+                    </div>
+                  </div>
+                 </div>
+            
+                <%end%>
+              <%end%>
+            </div>
+
+        
+        <div class="btn-group pull-right">
+          <% p_all =  Property.all %>
+            <% if p_all.count > 0 %>
+              <%= link_to "Add Tenant", new_tenant_path, :class=>"btn btn-default navbar-btn" %>
+            <% else %>
+              <%= link_to "Add Tenant", new_tenant_path, :class=>"btn btn-default navbar-btn", :disabled => true %>
+            <% end %>
+          
+      </div>
+      </div>

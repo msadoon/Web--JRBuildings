@@ -1,0 +1,41 @@
+<div class="panel-body">        
+            <!-- Each thumbnail -->
+          
+            <div class="row">
+
+              <% if (@expenses.nil?) || (@expenses.count == 0) %>
+                <h2>No Expenses</h2>
+              <% else %>
+              
+              <% @expenses.each do |expense| %>
+                 <div class="col-sm-6 col-md-4">
+                  <div class="panel panel-default">
+                    
+                    <div class="panel-body">
+                      <h5>Expense Year Start: <%= expense.year%></h5>
+                      <h5>Expense Year End: <%= expense.yearend%></h5>
+                      <% string = "CA: " + expense.buildinginfo %>
+                      <h5><%= string.first(32) %></h5>
+                      <p><h5>Year Total: <%='%.2f' % expense.yeartotal%></h5></p>
+                      <p>
+                        <a type="button" class="btn btn-primary navbar-btn" href=<%= edit_expense_path(expense) %>>Edit</a>  
+                      </p>   
+                    </div>
+                  </div>
+                 </div>
+            
+                <%end%>
+              <%end%>
+            </div>
+
+        
+        <div class="btn-group pull-right">
+          <% b_all =  Building.all %>
+            <% if b_all.count > 0 %>
+              <%= link_to "Add Expense", new_expense_path, :class=>"btn btn-default navbar-btn" %>
+            <% else %>
+              <%= link_to "Add Expense", new_expense_path, :class=>"btn btn-default navbar-btn", :disabled => true %>
+            <% end %>
+          
+      </div>
+      </div>

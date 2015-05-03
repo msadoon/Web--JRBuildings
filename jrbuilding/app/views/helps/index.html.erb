@@ -1,0 +1,135 @@
+<head>
+  <title>Help</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Help </h3>
+      </div>
+
+
+      
+      <div class="panel-body"> 
+      <div class="row">       
+       <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h5>Update Tax Rates</h5></div>
+          <div class="panel-body">
+            <% if current_user.admin? %>
+              <% @help = Help.find_by_id(1) %>
+              <%= bootstrap_form_for(@help) do |f| %>
+                <% if @help.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@help.errors.count, "error") %> prohibited this tax rate from being saved:</h2>
+                    <ul>
+                    <% @help.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <%= f.hidden_field :id %>
+                <div class="field">
+                  <%= f.text_field :gst, label: "GST", :min => 0 %>
+                </div>
+                <div class="field">
+                  <%= f.text_field :qst, label: "QST", :min => 0  %>
+                </div>
+                
+                  <div class="actions">
+                    <%= f.submit 'Update Taxes', :class=>"btn btn-success navbar-btn" %>
+                  </div>
+                <% end %>
+              
+            <% else %>
+              <% @help = Help.find_by_id(1) %>
+              <%= bootstrap_form_for(@help) do |f| %>
+                <div class="field">
+                  <%= f.text_field :gst, label: "GST", :readonly => true  %>
+                </div>
+                <div class="field">
+                  <%= f.text_field :qst, label: "QST", :readonly => true  %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="panel panel-default extend_box">
+          <div class="panel-heading"><h5>Downloads</h5></div>
+          <div class="panel-body">
+            <p>Master Lease</p>
+            <p>
+              <%= link_to 'Download', "https://www.dropbox.com/s/4k53u162clnspr3/master_lease.pdf?dl=1" %>
+            </p>
+            <p>Master Expense Addendum</p>
+            <p>
+              <%= link_to 'Download', "https://www.dropbox.com/s/6mo76r431ucxsly/exp_add.pdf?dl=1" %>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default extend_box">
+          <div class="panel-heading"><h5>Developer / Site Help</h5></div>
+          <div class="panel-body">
+            <p>Mubarak Sadoon</p>
+            <p>
+              14168302476
+            </p>
+          </div>
+          
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+              <div class="panel panel-info">
+                <div class="panel-heading">Remind Tenants of Upcoming Renewal (3 months before lease end) </div>
+                <div class="panel-body scrollable">
+                  <table class="table">
+                    <thead> 
+                      <tr>
+                        <th>Tenant Name</th>
+                        <th>Lease Expiry Date</th>
+                        <th>Remind?</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                      <% (Tenant.all).each do |k| %>
+                        <% if (((k.leaseend) < (Time.now.to_date + 3.months)) && (k.leaseend > Time.now.to_date)) && (k.t_email != "" )%>
+                          <tr>
+                            <td><%= k.tenantname %></td>
+                            <td><%= k.leaseend %></td>
+                            <% if (k.t_email.blank?)%>
+                            <% else %>
+                             <td><%= button_to "Remind", { :controller => "tenants", :action => "send_mail", :tname => k.tenantname, :temail => k.t_email, :tleaseend => k.leaseend }, :class => 'btn btn-default' %></td>
+                            <% end %>
+                          </tr>
+                        <% end %>
+                      <% end %>
+                    </tbody>
+                  
+                  </table>
+                  
+                </div>
+              </div>
+            </div> 
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+      </div>
+        
+      
+      
+      <div class="panel-footer">
+      </div>
+    </div>
+

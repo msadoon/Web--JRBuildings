@@ -1,0 +1,61 @@
+<!-- Panel  -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">User Profile</h3>
+  </div>
+  <div class="panel-body">
+
+      <div class="col-md-4">
+        <a href="#" class="thumbnail">
+            <% if @user.avatar.exists? %>
+                  <%= image_tag @user.avatar(:medium) %>
+            <% else %>
+                  <%= image_tag("http://skate.globalboarding.tv/thumbs/520x0x0//images/global/no-photo-available.jpg") %>
+            <% end %>
+        </a>
+        <p>
+        </p>
+      </div> 
+
+      <div class="col-md-4"> 
+        <%= bootstrap_form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+              <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.text_field :email, label: "Email", readonly: true  %>
+          </div>
+          <div class="field">
+            <%= f.text_field :description, label: "Description of user"  %>
+          </div>
+          <%= f.form_group do %>
+            <div class="field">
+              <%= f.check_box :admin, label: "Do you want to give this user administration rights?" %>
+            </div>
+          <% end %>
+          
+          <div class="field">
+            <%= f.file_field :avatar, label: "Picture of user" %>
+          </div>
+          <div class="field">
+            <%= f.file_field :mlease, label: "Master Lease" %>
+          </div>
+          <div class="field">
+            <%= f.file_field :expadd, label: "Expense Addendum Master Lease" %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+            
+      </div> 
+  </div>
+</div>

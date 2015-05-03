@@ -1,0 +1,151 @@
+// Place all the styles related to the tenants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.col-drop {
+  width: 200px;
+}
+
+.prewrap {
+	white-space: pre-wrap;
+}
+
+.edit_post1 {
+	position:relative;
+	right:30px;
+	width: 50%
+}
+
+.edit_post2 {
+	position:relative;
+	right:20px;
+	width: 50%
+}
+
+.edit_mrent {
+	position:relative;
+	right:65px;
+	width: 50%
+}
+
+.edit_btype {
+	position:relative;
+	right:55px;
+	width: 50%
+}
+
+.edit_addterms {
+	position:relative;
+	right:-15px;
+	width:92%;
+}
+
+@media (min-width: 992px) {
+  .hideunhide {
+    display: show;
+  }
+  .hideunhide2 {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .hideunhide {
+	   display: none;
+  }
+  .hideunhide2 {
+    display: show;
+  }
+}
+
+.textarea {
+    resize: vertical;
+}
+
+.edit_gst {
+	position:relative;
+	padding-right: 145px;
+	width: 50%;
+}
+
+.blue {
+	padding-left: 30px;
+	
+}
+
+.red {
+	background-color: red;
+}
+
+.edit_pst {
+	position:relative;
+	padding-right: 145px;
+	width: 50%;
+}
+
+.edit_mtaxwrent {
+	position:relative;
+	padding-right:20px;
+	width: 50%;
+	
+}
+.edit_ytaxwrent {
+	position:relative;
+	padding-right:25px;
+	width: 50%;
+	background-color:blue;
+}
+.edit_pshare {
+	position:relative;
+	right:22px;
+	width: 25%;
+}
+
+.edit_psharelabel {
+	position:relative;
+	right:49px;
+	width: 50%;
+}
+
+.edit_eyear {
+	position:relative;
+	padding-left: 0px;
+	width: 30%;
+}
+
+.edit_eyearlabel {
+	position:relative;
+	right: 42px;
+	margin-right:-10px;
+	width: 70%;
+}
+
+.edit_yincrease {
+	position:relative;
+	right:35px;
+	width: 50%;
+}
+
+.edit_yincreaselabel {
+	position:relative;
+	right:20px;
+	width: 50%;
+}
+
+.edit_arent {
+	position:relative;
+	right:35px;
+	width: 50%;
+}
+
+.edit_arentlabel {
+	position:relative;
+	right:35px;
+	width: 50%;
+}
+
+.dateselect {
+	position:relative;
+	right: 45px;
+	width: 100%;
+}

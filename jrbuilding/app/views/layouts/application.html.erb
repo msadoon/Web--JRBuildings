@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="bimage">
+	<div class="bimage">
+		<head>
+				  
+		  <div class="pagetop">	
+		  	
+		  </div>
+
+		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		  <%= csrf_meta_tags %>
+		</head>
+		<body>
+			
+			<script type="text/javascript"> </script>
+			<div id="user_nav">
+			    	<% if current_user %>
+
+						    <div class="container">
+								<nav class="navbar navbar-default navbar-static-top" role="navigation">
+						  			<div class="container-fluid">
+						  				<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8">
+											            <span class="sr-only">Toggle navigation</span>
+											            <span class="icon-bar"></span>
+											            <span class="icon-bar"></span>
+											            <span class="icon-bar"></span>
+											</button>
+											<span class="title navbar-brand"><h3>JR Buildings</h3></span>
+						  				</div>
+						  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+						    				<ul class="nav navbar-nav listitemheight">
+						    					<li><a href=<%= buildings_path %>>Civic Addresses</a></li>
+								    			<li><a href=<%= properties_path %>>Locals</a></li>
+								    			<li><a href=<%= tenants_path %>>Tenants</a></li>
+								    			<li><a href=<%= expenses_path %>>Expenses</a></li>
+								    	
+								    			<li><a href=<%= cheques_path %>>Cheques</a></li>
+								    			<li><a href=<%= users_path %>>Personal</a></li>
+								    			<li><a href=<%= helps_path %>>Help</a></li>
+								    			<li><a href=<%= log_out_path %>>Log Out</a></li>
+								  			</ul>
+							  			</div>
+							  			<div class="loggedin">
+							  				Logged in as <%= current_user.email %>
+							  			</div>
+						    		</div>
+						    	</nav>
+
+								<%= yield %>
+								
+							</div>
+			    	<% else %>
+					    	 <div class="container">
+					    	 	<% flash.each do |name, msg| %>
+						    		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+						    	<% end %>
+
+								<%= yield %>
+					    		
+					    	</div>
+			    	<% end %>
+			 </div>
+		 
+
+		</body>
+	</div>
+</html>

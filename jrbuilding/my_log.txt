@@ -1,0 +1,86 @@
+D, [2014-07-06T22:50:01.447299 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:04:39.759279 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:04:48.933607 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:07:51.456901 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:08:00.324148 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:13:20.002544 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:13:39.193147 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:13:47.431450 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:13:56.506224 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:14:07.088970 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:14:16.406082 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:14:32.416909 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:14:41.958995 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:14:55.745787 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:15:29.409961 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:15:39.439271 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:15:50.929249 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:16:13.281206 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:16:22.329499 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:16:31.348951 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:03.920741 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:13.806648 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:22.216304 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:33.309951 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:42.282345 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:18:50.300316 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:19:08.664368 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:19:26.641506 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:19:35.223411 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:21:13.098884 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:21:21.641496 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:21:31.218090 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:24:50.474014 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:25:22.333487 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-06T23:26:08.111739 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:22:02.121870 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:25:18.817233 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:25:56.012298 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:32:17.244404 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:32:30.760687 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:32:36.019175 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:32:40.140606 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+
+D, [2014-07-07T00:32:41.098414 #17158] DEBUG -- : 'cheque deleted' = "cheque deleted"
+

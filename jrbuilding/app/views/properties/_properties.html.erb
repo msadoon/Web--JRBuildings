@@ -1,0 +1,50 @@
+<div class="panel-body">        
+            <!-- Each thumbnail -->
+          
+            <div class="row">
+
+              <% if (@properties.nil?) || (@properties.count == 0) %>
+                <h2>No Properties</h2>
+              <% else %>
+              
+              <% @properties.each do |property| %>
+                 <div class="col-sm-6 col-md-4">
+
+                  <div class="panel panel-default">
+                    
+                    <div class="panel-body">
+                      <% string = property.buildinginfo %> 
+                      <h4><%= string.first(21) %></h4><h4>Local: <%= property.number%></h4>
+                       <% if property.rented == false %>
+                          <p><h5>Rented: No</h5></p>
+                       <% else %>
+                          <p><h5>Rented: Yes</h5></p>
+                       <% end %>
+                      
+                      <p>
+                        <% if can? :create, property %>
+                          <a type="button" class="btn btn-primary navbar-btn" href=<%= edit_property_path(property) %>>Edit</a> 
+                        <% end %>   
+                      </p>     
+                    </div>
+                  </div>
+
+                  
+                 </div>
+            
+                <%end%>
+              <%end%>
+            </div>
+
+        
+        <div class="btn-group pull-right">
+          <% if can? :create, @properties %>
+            <% b_all =  Building.all %>
+            <% if b_all.count > 0 %>
+              <%= link_to "Add Property", new_property_path, :class=>"btn btn-default navbar-btn" %>
+            <% else %>
+              <%= link_to "Add Property", new_property_path, :class=>"btn btn-default navbar-btn", :disabled => true %>
+            <% end %>
+          <% end %>
+      </div>
+      </div>

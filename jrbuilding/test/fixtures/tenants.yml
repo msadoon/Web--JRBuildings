@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buildingnumber: 1
+  propertynumber: 1
+  businessname: MyString
+  tenantname: MyString
+  status: false
+  type: false
+  notes: MyText
+  postgiven: 1
+  posttogive: 1
+  renewal: false
+  email: MyString
+  monthrent: 9.99
+  businesstype: MyString
+  addterms: MyText
+  renewterms: MyText
+  gst: 9.99
+  qst: 9.99
+  monthrentwithtax: 9.99
+  yearrentwithtax: 9.99
+  leasestart: 2014-06-04
+  leaseend: 2014-06-04
+  pshare: 9.99
+  expenseyear: 1
+  yearlyincrease: 9.99
+  additionalrent: 9.99
+  monthlyrent: 9.99
+
+two:
+  buildingnumber: 1
+  propertynumber: 1
+  businessname: MyString
+  tenantname: MyString
+  status: false
+  type: false
+  notes: MyText
+  postgiven: 1
+  posttogive: 1
+  renewal: false
+  email: MyString
+  monthrent: 9.99
+  businesstype: MyString
+  addterms: MyText
+  renewterms: MyText
+  gst: 9.99
+  qst: 9.99
+  monthrentwithtax: 9.99
+  yearrentwithtax: 9.99
+  leasestart: 2014-06-04
+  leaseend: 2014-06-04
+  pshare: 9.99
+  expenseyear: 1
+  yearlyincrease: 9.99
+  additionalrent: 9.99
+  monthlyrent: 9.99

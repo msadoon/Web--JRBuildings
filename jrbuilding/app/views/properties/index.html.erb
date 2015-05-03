@@ -1,0 +1,31 @@
+<head>
+  <title>Properties List</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Locals List </h3>
+      </div>
+
+      <div class="panel-body">        
+        <div class="row">
+          <div class="col-xs-2 col-drop">
+               <div class="input-group">
+                <%= form_tag properties_path, :id => "properties_filter", :method => 'get' do %>
+                  <p>
+                     <%= select_tag :search, content_tag(:option,'Civic Address',:value=>"")+options_from_collection_for_select(Building.all, :half_address, :half_address), {:class => "form-control"} %>
+                  </p>
+                <% end %>
+               </div>
+          </div> 
+        </div>
+      </div>
+        
+      
+      <div id="filteredproperties">
+          <%= render 'properties' %>
+      <div>
+      <div class="panel-footer">
+      </div>
+    </div>

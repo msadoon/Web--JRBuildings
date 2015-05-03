@@ -1,0 +1,55 @@
+<head>
+  <title>Users List</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Users List</h3>
+      </div>
+      <div class="panel-body">
+     
+            <!-- Each thumbnail -->
+
+            <div class="row">
+              <% if @users.count == 0 %>
+                <h2>No Users</h2>
+              <% end %>
+              <% @users.each do |user| %>
+                
+                 <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail relative">
+                   
+                      <% if user.avatar.exists? %>
+                            <%= image_tag user.avatar(:medium) %>
+                      <% else %>
+                            <%= image_tag("http://skate.globalboarding.tv/thumbs/520x0x0//images/global/no-photo-available.jpg") %>
+                      <% end %>
+                    
+                    <div class="caption fixedtextheight">
+                      <h3><%= user.email%></h3><h4><%= user.description%></h4>
+                      
+                        <% if can? :create, user %>
+                          <p>
+                            <a type="button" class="btn btn-default navbar-btn" href=<%= edit_user_path(user) %>>Edit</a> <%= link_to "Delete", user, method: :delete, :class=>"btn btn-default navbar-btn", data: { confirm: "Deleting this user will not allow him/her to log in again until you create a new profile for them."} %>
+                          </p> 
+                        <% else %>
+                         <br><br>
+                        <% end %>   
+                        
+                    </div>
+                  </div>
+                 </div>
+            
+              <%end%>
+            </div>
+        
+        <div class="btn-group pull-right">
+          <% if can? :create, @users %>
+            <%= link_to "New User", new_user_path, :class=>"btn btn-default navbar-btn" %>
+          <% end %>
+      </div>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>

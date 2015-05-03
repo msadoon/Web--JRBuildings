@@ -1,0 +1,66 @@
+<!-- Panel -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">Property Edit</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-4">
+            <a href="#" class="thumbnail">
+              <% if @property.avatar.exists? %>
+                <%= image_tag @property.avatar(:medium) %>
+              <% else %>
+                <%= image_tag("http://skate.globalboarding.tv/thumbs/520x0x0//images/global/no-photo-available.jpg") %>
+              <% end %>
+            </a>
+            <p>
+            </p>
+          </div>
+      <div class="col-md-4"> 
+        <%= bootstrap_form_for(@property) do |f| %>
+          <% if @property.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+              <ul>
+              <% @property.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.hidden_field :id %>
+          <div class="field">
+            <%= f.number_field :number, label: "Local Number" %>
+          </div>
+
+          <div class="field" id="selection">
+            <%= f.collection_select :buildinginfo, Building.all, :half_address, :half_address, {:label => "Civid Address Info"} %>
+          </div>   
+       
+          <div class="field">
+            <%= f.text_field :suitedfor, label: "Suited For" %>
+          </div>
+          <div class="field">
+            <%= f.text_area :notes, label: "Notes" %>
+          </div>
+          <div class="field">
+            <%= f.check_box :rented, label: "Rented" %>
+          </div>
+          <div class="field">
+            <%= f.file_field :avatar, label: "Picture of Local" %>
+          </div>
+          <div class="actions">
+            <%= f.submit 'Update Property', :class => "btn btn-success navbar-btn" %>
+            <span id="delete">
+              <%= link_to "Delete", @property, method: :delete, :class=>"btn btn-danger navbar-btn pull-right", data: { confirm: "Deleting this property will delete ALL the tenants, expenses, and leases associated to it."} %>
+            </span>
+          </div>
+        <% end %>
+            
+      </div>
+        
+  </div>
+  <div class="panel-footer">
+
+        
+  </div>
+</div>

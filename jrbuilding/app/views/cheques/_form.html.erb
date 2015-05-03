@@ -1,0 +1,55 @@
+
+<div class="row">
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading">Tenants</div>
+                      
+                      <div class="panel-body tenants__cheque_list">
+                          <div class="list-group">
+                          
+                                <% Tenant.all.each do |t| %>
+                                  
+                                  <a href="#chequing" class="list-group-item"><%= t.tenantname %></a>
+                                  
+                                <% end %>
+                                <!-- <a href="#" class="list-group-item active">
+                                  Cras justo odio
+                                </a> -->
+                              
+                            
+                          </div>
+                      </div>
+                  </div>
+          </div> 
+          <div class="col-md-4">
+                <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading">Adding Cheques</div>
+                      <div class="panel-body tenants__cheque_list">
+                         <%= bootstrap_form_for(@cheque) do |f| %>
+                            
+                          <%= f.hidden_field :tenant_id %>
+                          <div class="field">
+                            <%= f.date_select :postdate, label: "Post Date" %>
+                          </div>
+                          <div class="field shorter">
+                            <%= f.text_field :amount, label: "Amount" %>
+                          </div>
+                          <%= f.submit "Update Expense", {:class => "btn btn-success", :id => "submit_cheque"}%> <br> <br>
+                              
+                        <% end %>
+                        <div id="my_number"><%= @number %></div>
+                        <%= button_to "Tenant Cheque Report", {:controller => "cheques", :action => "single_report", :tenant => "tname"}, {:class => "btn btn-info ", :id => "single_report", :name => "single_report" }%> <br> 
+                        <%= link_to "Complete Cheque Report", {:controller => "cheques", :action => "all_report"}, {:class => "btn btn-info ", :id => "all_report", :name => "all_report" }%> 
+
+                    </div>
+                  </div>
+          </div>
+            <div class="col-md-4">
+              <div id="listcheques">
+                <%= render 'create' %>
+              </div>
+            </div>
+        </div>
+

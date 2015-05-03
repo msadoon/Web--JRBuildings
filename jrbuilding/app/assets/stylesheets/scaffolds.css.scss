@@ -1,0 +1,41 @@
+.strong {
+	padding-right: 1.25em;
+}
+
+.minheight {
+	min-height: 350px;
+}
+
+.bimage {
+	background-image: image-url("green_cup.png");
+}
+
+.fixedtextheight {
+	position:absolute;
+	bottom: 0; 
+	width: 100%;
+}
+
+.relative {
+
+	height: 450px;
+}
+
+.pagetop {
+	padding-top: 75px;
+}
+
+.loggedin {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.title {
+
+  padding: 0px 15px;
+
+}
+
+.listitemheight > li > a {
+  line-height: 40px;
+}

@@ -1,0 +1,53 @@
+<head>
+  <title>Civi Address List</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Civic Address List</h3>
+      </div>
+      <div class="panel-body">
+     
+          
+            <!-- Each thumbnail -->
+
+            <div class="row">
+              <% if @buildings.count == 0 %>
+                <h2>No Buildings</h2>
+              <% end %>
+              <% @buildings.each do |building| %>
+                
+                 <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail relative">
+                    <% if building.avatar.exists? %>
+                      <%= image_tag building.avatar(:medium) %>
+                    <% else %>
+                      <%= image_tag("http://skate.globalboarding.tv/thumbs/520x0x0//images/global/no-photo-available.jpg") %>
+                    <% end %>
+                    <div class="caption fixedtextheight">
+                      <h3><%= building.streetno%><br><%= building.streetname%></h3>
+                      <p><%=building.postalcode%></p>
+                      <% if can? :edit, building %>
+                        <p>
+                            <a type="button" class="btn btn-primary navbar-btn" href=<%= edit_building_path(building) %>>Edit</a>    
+                        </p>
+                      <% else %>
+                         <br><br>
+                      <% end %>
+                    </div>
+                  </div>
+                 </div>
+            
+              <%end%>
+            </div>
+
+        <div class="btn-group pull-right">
+          <% if can? :create, @buildings %>
+            <%= link_to "Add Civic Address", new_building_path, :class=>"btn btn-default navbar-btn" %>
+          <% end %>
+      </div>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>

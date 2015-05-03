@@ -1,0 +1,46 @@
+<head>
+  <title>Tenants List</title>
+</head>
+  
+  <!-- Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tenants List </h3>
+      </div>
+
+      <div class="panel-body">        
+        <div class="row">
+          
+          <div class="col-md-4 col-drop">
+               <div class="input-group">
+                      
+                        <%= form_tag tenants_path, :id => "tenants_filter_building", :method => 'get' do %>
+                        
+                        <%= collection_select @building, :search, Building.all, :half_address, :half_address, {:prompt => "Civic Address"}, {:class => "form-control", :id => "index_tenant_building_select"} %>
+                        
+                      <% end %>                      
+                </div>
+          </div> 
+          <div class="col-md-4 col-drop">
+               <div class="input-group">
+                      
+                        <%= form_tag tenants_path, :id => "tenants_filter_property", :method => 'get' do %>
+                        
+                        <%= collection_select @property, :search, Property.all, :index_dropdown, :index_dropdown, {:prompt => "Local"}, {:class => "form-control", :id => "index_tenant_property_select"}  %>
+                        
+                      <% end %>                   
+                </div>
+
+          </div>
+         
+
+        </div>
+      </div> 
+
+      <div id="filteredtenants">
+          <%= render 'tenants' %>
+      </div>
+      <div class="panel-footer">
+      </div>
+    </div>
+
