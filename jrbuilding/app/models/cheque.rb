@@ -1,4 +1,4 @@
-class Cheque < ActiveRecord::Base
+class Cheque < ApplicationRecord
 
 	belongs_to :tenant
 

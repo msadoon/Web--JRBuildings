@@ -1,4 +1,4 @@
-class Tenant < ActiveRecord::Base
+class Tenant < ApplicationRecord
 	before_validation :clear_empty_attrs
 
 	validates_presence_of :tenantbuildinginfo, :tenantname

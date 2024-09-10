@@ -1,4 +1,4 @@
-class Property < ActiveRecord::Base
+class Property < ApplicationRecord
 	has_attached_file :avatar, :storage => :dropbox, 
 		:dropbox_credentials => Rails.root.join("config/dropbox.yml"), 
 		:styles => { :medium => "300x300>", :thumb=> "100x100>" }, 

@@ -1,2 +1,2 @@
-class Help < ActiveRecord::Base
+class Help < ApplicationRecord
 end
