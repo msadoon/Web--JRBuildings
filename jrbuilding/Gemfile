@@ -66,5 +66,4 @@ gem 'prawn'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: [:production, :development, :test]
 
-
-
+gem "web-console", "~> 2.0", group: [:development]
