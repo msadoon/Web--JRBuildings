@@ -50,7 +50,7 @@ gem 'log_buddy'
 gem 'delayed_job_active_record'
 
 gem 'daemons'
-
+gem 'rails-controller-testing'
 gem "cancan"
 
 gem 'pdf-forms'
